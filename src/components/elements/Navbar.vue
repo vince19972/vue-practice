@@ -1,11 +1,12 @@
 <template>
   <nav>
-    <!-- <div class="heading">Stock Trader</div> -->
-    <logo info="Stock Trader" color="white" hover middle></logo>
+    <router-link to="/">
+      <logo info="Stock Trader" color="white" hover middle></logo>
+    </router-link>
     <div class="list-container">
       <ul class="list">
-        <li class="tab">Portfolio</li>
-        <li class="tab">Stocks</li>
+        <!-- <li class="tab">Portfolio</li> -->
+        <router-link to="stocks"><a class="link">Stocks</a></router-link>
       </ul>
       <ul class="list">
         <li class="tab">End Day</li>
@@ -15,6 +16,16 @@
     </div>
   </nav>
 </template>
+
+<script>
+	import Logo from './Logo.vue'
+  
+  export default {
+    components: {
+      Logo
+    }
+  }
+</script>
 
 <style scoped>
   nav {
@@ -40,14 +51,7 @@
     list-style: none;
     margin-right: 24px;
   }
-</style>
-
-<script>
-	import Logo from './elements/Logo.vue'
-  
-  export default {
-    components: {
-      Logo
-    }
+  .link {
+    color: black;
   }
-</script>
+</style>
